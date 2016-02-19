@@ -40,6 +40,15 @@ public class AppTest extends FluentTest {
       assertThat(pageSource()).contains("Bike");
     }
 
+    @Test
+    public void defintionIsIsAddedToWord() {
+      Word word = new Word("Bike");
+      goTo("http://localhost:4567/words/" + word.getId());
+      fill("#inputDef").with("best toy");
+      submit(".btn");
+      assertThat(pageSource()).contains("best toy");
+    }
+
 
   //Tests go here
 }
