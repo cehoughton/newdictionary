@@ -22,6 +22,10 @@ public class Word {
     return mId;
   }
 
+  public static ArrayList<Word> all() {
+    return instances;
+  }
+
   // public ArrayList<Defintions> getDefintions() {
   //   return mDefintions;
   // }

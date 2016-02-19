@@ -1,1 +1,5 @@
 ## For plain English specs
+
+Allow user to add words to Dictionary
+Allow user to add defintions to each Word
+Display all defintions for each word
