@@ -38,11 +38,11 @@ public class WordTest {
    assertEquals(Word.find(testWord.getId()), testWord);
   }
 
- //  @Test
- // public void getDefinitions_initiallyReturnsempptyArrayList() {
- //  Word testWord = new Word("favorite toy");
- //  assertTrue(testWord.getDefinitions() instanceof ArrayList);
- //  }
+  @Test
+  public void getDefinitions_initiallyReturnsempptyArrayList() {
+   Word testWord = new Word("Train");
+   assertTrue(testWord.getDefinitions() instanceof ArrayList);
+  }
 
 
 

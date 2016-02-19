@@ -5,13 +5,13 @@ public class Word {
 
   private String mWord;
   private int mId;
-  // private ArrayList<Definitions> mDefinitions;
+  private ArrayList<Definitions> mDefinitions;
 
   public Word(String inputWord) {
     mWord = inputWord;
     instances.add(this);
     mId = instances.size();
-    // mDefinitions = new ArrayList<Definitions>();
+    mDefinitions = new ArrayList<Definitions>();
   }
 
   public String getWord() {
@@ -38,7 +38,7 @@ public class Word {
     }
   }
 
-  // public ArrayList<Defintions> getDefintions() {
-  //   return mDefintions;
-  // }
+  public ArrayList<Definitions> getDefinitions() {
+    return mDefinitions;
+  }
 }
