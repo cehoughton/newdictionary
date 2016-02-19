@@ -17,12 +17,11 @@ public class App {
    }, new VelocityTemplateEngine());
 
     get("/words", (request,response) -> {
-     HashMap<String, Object> model = new HashMap<String, Object>();
-   //Word word = new Word(request.queryParams("inputWord"));
-     model.put("words", Word.all());
-     model.put("template", "templates/words.vtl");
-     return new ModelAndView(model, layout);
-  }, new VelocityTemplateEngine());
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("words", Word.all());
+      model.put("template", "templates/words.vtl");
+      return new ModelAndView(model, layout);
+   }, new VelocityTemplateEngine());
 
     post("/words", (request,response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
@@ -33,34 +32,32 @@ public class App {
    }, new VelocityTemplateEngine());
 
     get("/words/:id", (request, response) -> {
-     HashMap<String, Object> model = new HashMap<String, Object>();
-     Word word = Word.find(Integer.parseInt(request.params(":id")));
-     model.put("word", word);
-     model.put("template", "templates/word.vtl");
-     return new ModelAndView(model, layout);
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      model.put("word", word);
+      model.put("template", "templates/word.vtl");
+      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
 
-     post("/definitions/:id", (request, response) -> {
-       HashMap<String, Object> model = new HashMap<String, Object>();
-       Word word = Word.find(Integer.parseInt(request.params(":id")));
-       ArrayList<Definitions> definitions = word.getDefinitions();
+    post("/definitions/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      ArrayList<Definitions> definitions = word.getDefinitions();
 
-       if (definitions == null) {
-         definitions = new ArrayList<Definitions>();
-       }
+      if (definitions == null) {
+        definitions = new ArrayList<Definitions>();
+      }
 
-       String inputDef = request.queryParams("inputDef");
-       Definitions newDef = new Definitions(inputDef);
+      String inputDef = request.queryParams("inputDef");
+      Definitions newDef = new Definitions(inputDef);
 
-       definitions.add(newDef);
+      definitions.add(newDef);
 
-       model.put("word", word);
-       model.put("definitions", definitions);
-       model.put("template", "templates/definitions.vtl");
-       return new ModelAndView(model, layout);
+      model.put("word", word);
+      model.put("definitions", definitions);
+      model.put("template", "templates/definitions.vtl");
+      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
 
-
-
-    }
+  }
 }

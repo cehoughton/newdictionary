@@ -48,7 +48,4 @@ public class AppTest extends FluentTest {
       submit(".btn");
       assertThat(pageSource()).contains("best toy");
     }
-
-
-  //Tests go here
 }

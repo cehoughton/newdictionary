@@ -1,8 +1,5 @@
 import java.util.ArrayList;
-
-
-
-
+ 
 public class Definitions {
   private String mInputDef;
   private static ArrayList<Definitions> instances =new ArrayList<Definitions>();
