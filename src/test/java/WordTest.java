@@ -24,4 +24,20 @@ public class WordTest {
   assertTrue(Word.all().contains(firstWord));
   assertTrue(Word.all().contains(secondWord));
   }
+
+  @Test
+  public void clear_removesAllWordInstancesFromMemory() {
+   Word testWord = new Word("Cat");
+   Word.clear();
+   assertEquals(Word.all().size(), 0);
+   }
+
+  @Test
+  public void find_returnsWordWithSameId() {
+   Word testWord = new Word("Train");
+   assertEquals(Word.find(testWord.getId()), testWord);
+  }
+
+
+
 }
