@@ -24,6 +24,22 @@ public class AppTest extends FluentTest {
       assertThat(pageSource()).contains("Build your Dictionary!");
     }
 
+    @Test
+    public void wordIsCreatedTest() {
+    goTo("http://localhost:4567");
+
+    fill("#inputWord").with("Train");
+    submit("btn");
+    assertThat(pageSource()).contains("Train");
+    }
+
+    @Test
+    public void defintionFormIsDisplayed() {
+      Word word = new Word("Bike");
+      goTo("http://localhost:4567/words/" + word.getId());
+      assertThat(pageSource()).contains("Bike");
+    }
+
 
   //Tests go here
 }

@@ -1,0 +1,24 @@
+
+<h1>$word.getWord()</h1>
+
+<ul>
+#foreach($definition in $word.getDefinitions())
+ <li>$definition.getInputDef()</li>
+ #end
+</ul>
+<h1>Add a definition to $word.getWord() </h1>
+
+
+<form action="/definitions/$word.getId()" method="post">
+  <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
+
+  <div class="form-group">
+    <label for="inputDef">Enter definition here</label>
+    <input id="inputDef" name="inputDef" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>
+
+<br>
+
+<a href="/words">View All Words</a>
