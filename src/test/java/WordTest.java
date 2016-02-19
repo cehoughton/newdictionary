@@ -44,6 +44,14 @@ public class WordTest {
    assertTrue(testWord.getDefinitions() instanceof ArrayList);
   }
 
+  @Test
+   public void addDefinition_addsDefinitionToList() {
+    Word testWord = new Word("Train");
+    Definitions testDef = new Definitions("favorite toy");
+    testWord.addDefinition(testDef);
+    assertTrue(testWord.getDefinitions().contains(testDef));
+  }
+
 
 
 

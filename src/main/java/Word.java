@@ -28,7 +28,7 @@ public class Word {
 
   public static void clear() {
    instances.clear();
-}
+  }
 
   public static Word find(int id) {
     try {
@@ -41,4 +41,10 @@ public class Word {
   public ArrayList<Definitions> getDefinitions() {
     return mDefinitions;
   }
+
+  public void addDefinition(Definitions definition) {
+    mDefinitions.add(definition);
+  }
+
+
 }
